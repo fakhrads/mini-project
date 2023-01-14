@@ -61,6 +61,6 @@ func main() {
 	router.PUT("/persons/:id", controllers.UpdatePerson)
 	router.DELETE("/persons/:id", controllers.DeletePerson)
 
-	router.Run(":8080")
+	router.Run(":" + os.Getenv("PORT"))
 
 }
