@@ -67,6 +67,7 @@ func UpdatePerson(c *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"result": "Success Update Person",
 	})
