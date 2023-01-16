@@ -18,6 +18,7 @@ func DbMigrate(dbParams *sql.DB) {
 	}
 
 	n, errs := migrate.Exec(dbParams, "postgres", migrations, migrate.Up)
+	DbConntection = dbParams
 	if errs != nil {
 		panic(errs)
 	}

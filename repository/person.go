@@ -2,15 +2,16 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"formative-15/structs"
 )
 
 func GetAllPerson(db *sql.DB) (err error, results []structs.Person) {
-	sql := `SELECT * FROM person`
+	sql := "SELECT * FROM person"
 
 	rows, err := db.Query(sql)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	defer rows.Close()

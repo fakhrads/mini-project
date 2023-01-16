@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"formative-15/database"
 	"formative-15/repository"
 	"formative-15/structs"
@@ -15,8 +16,8 @@ func GetAllPerson(c *gin.Context) {
 		result gin.H
 	)
 
+	fmt.Println(database.DbConntection)
 	persons, err := repository.GetAllPerson(database.DbConntection)
-
 	if err != nil {
 		result = gin.H{
 			"result": err,
