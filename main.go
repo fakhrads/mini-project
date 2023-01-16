@@ -41,7 +41,7 @@ func main() {
 		os.Getenv("PGPASSWORD"),
 		os.Getenv("PGDATABASE"))
 
-	DB, err := sql.Open("postgres", psqlInfo)
+	DB, err = sql.Open("postgres", psqlInfo)
 	err = DB.Ping()
 	if err != nil {
 		fmt.Println("DB Connection failed")
